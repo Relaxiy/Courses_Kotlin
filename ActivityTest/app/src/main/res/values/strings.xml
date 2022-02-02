@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="input_here">Введи сюда</string>
+    <string name="button_text">Нажми меня</string>
+</resources>
