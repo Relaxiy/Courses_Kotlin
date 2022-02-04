@@ -26,15 +26,19 @@ class MainActivity: AppCompatActivity() {
         initViews()
     }
 
+    private fun createUser(){
+        val user: User = User(inputFirstName.text.toString(),
+            inputSecondName.text.toString(),
+            inputAge.text.toString().toInt())
+        userView?.text = user.toString()
+    }
+
     private fun initViews(){
         btn.setOnClickListener{
             if(inputFirstName.text.isEmpty() || inputSecondName.text.isEmpty() || inputAge.text.isEmpty()) {
                 showToast("error!")
             } else {
-                val user: User = User(inputFirstName.text.toString(),
-                    inputSecondName.text.toString(),
-                    inputAge.text.toString().toInt())
-                userView?.text = user.toString()
+                createUser()
             }
         }
     }
