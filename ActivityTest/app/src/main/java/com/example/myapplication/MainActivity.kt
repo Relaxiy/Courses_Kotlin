@@ -26,11 +26,11 @@ class MainActivity: AppCompatActivity() {
         initViews()
     }
 
-    private fun createUser(){
+    private fun createUser(): String{
         val user: User = User(inputFirstName.text.toString(),
             inputSecondName.text.toString(),
             inputAge.text.toString().toInt())
-        userView?.text = user.toString()
+        return user.toString()
     }
 
     private fun initViews(){
@@ -38,7 +38,7 @@ class MainActivity: AppCompatActivity() {
             if(inputFirstName.text.isEmpty() || inputSecondName.text.isEmpty() || inputAge.text.isEmpty()) {
                 showToast("error!")
             } else {
-                createUser()
+                userView?.text = createUser()
             }
         }
     }
