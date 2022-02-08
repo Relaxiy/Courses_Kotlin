@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity: AppCompatActivity() {
-
+    private val usersFactory: UsersFactory = UsersFactory()
     private val btn by lazy { findViewById<Button>(R.id.btn) }
     private val inputFirstName by lazy { findViewById<EditText>(R.id.inputFirstName) }
     private val inputSecondName by lazy { findViewById<EditText>(R.id.inputSecondName) }
@@ -26,11 +26,10 @@ class MainActivity: AppCompatActivity() {
         initViews()
     }
 
-    private fun createUser(): String{
-        val user: User = User(inputFirstName.text.toString(),
+    private fun createUser(){
+        usersFactory.addUser(User(inputFirstName.text.toString(),
             inputSecondName.text.toString(),
-            inputAge.text.toString().toInt())
-        return user.toString()
+            inputAge.text.toString().toInt()))
     }
 
     private fun initViews(){
@@ -38,7 +37,7 @@ class MainActivity: AppCompatActivity() {
             if(inputFirstName.text.isEmpty() || inputSecondName.text.isEmpty() || inputAge.text.isEmpty()) {
                 showToast("error!")
             } else {
-                userView?.text = createUser()
+                userView?.text = usersFactory.returnUsers().toString()
             }
         }
     }
