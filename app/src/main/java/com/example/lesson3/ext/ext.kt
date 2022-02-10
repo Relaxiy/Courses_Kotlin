@@ -5,6 +5,8 @@ import android.view.Gravity
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
+import com.example.lesson3.LoginFragment
+import com.example.lesson3.dialog.LoginDialog
 
 fun FragmentActivity.openFragment(fragment: Fragment, tag: String, id: Int){
     supportFragmentManager
@@ -17,9 +19,10 @@ fun FragmentActivity.openFragment(fragment: Fragment, tag: String, id: Int){
 fun Fragment.checkEmail(email: String): Boolean {
     return Patterns.EMAIL_ADDRESS.matcher(email).matches()
 }
-fun Fragment.showToast(message: String){
-    val toast = Toast.makeText(activity, message, Toast.LENGTH_LONG)
-    toast.setGravity(Gravity.TOP, 0, 0)
-    toast.show()
+
+fun FragmentActivity.dialog(){
+    val myDialogFragment = LoginDialog()
+    val manager = supportFragmentManager
+    myDialogFragment.show(manager, "myDialog")
 }
 

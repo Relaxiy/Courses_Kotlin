@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import com.example.lesson3.ext.checkEmail
+import com.example.lesson3.ext.dialog
 import com.example.lesson3.ext.openFragment
-import com.example.lesson3.ext.showToast
 import com.example.lesson3.models.User
 import kotlinx.android.synthetic.main.fragment_login.*
 
@@ -28,7 +28,7 @@ class LoginFragment: Fragment(R.layout.fragment_login) {
                 inputEmail.text.isEmpty() ||
                 inputPassword.text.isEmpty() ||
                 !checkEmail(inputEmail.text.toString())){
-                showToast("Wrong!")
+                requireActivity().dialog()
             } else {
                 val user = createUser()
                 requireActivity().apply {
