@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/courses_kotlin/Courses_Kotlin/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1245" />
+        <entry key="..\:/courses_kotlin/Courses_Kotlin/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1245" />
         <entry key="..\:/courses_kotlin/Courses_Kotlin/app/src/main/res/layout/activity_main.xml" value="0.3625" />
         <entry key="..\:/courses_kotlin/Courses_Kotlin/app/src/main/res/layout/fragment_alldata.xml" value="0.18541666666666667" />
         <entry key="..\:/courses_kotlin/Courses_Kotlin/app/src/main/res/layout/fragment_login.xml" value="0.1" />

@@ -11,7 +11,7 @@ class LoginDialog : DialogFragment() {
         return activity?.let {
             val builder = AlertDialog.Builder(it)
             builder.setTitle("Warning!")
-                .setMessage("Input all fields!")
+                .setMessage("Not valid!")
                 .setPositiveButton("OK") {
                         dialog, id ->  dialog.cancel()
                 }
