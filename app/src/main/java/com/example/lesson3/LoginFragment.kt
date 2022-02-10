@@ -3,6 +3,7 @@ package com.example.lesson3
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import com.example.lesson3.ext.checkEmail
 import com.example.lesson3.ext.openFragment
 import com.example.lesson3.ext.showToast
 import com.example.lesson3.models.User
@@ -25,7 +26,8 @@ class LoginFragment: Fragment(R.layout.fragment_login) {
         btn_toUsernameFragment.setOnClickListener {
             if (inputLogin.text.isEmpty() ||
                 inputEmail.text.isEmpty() ||
-                inputPassword.text.isEmpty()){
+                inputPassword.text.isEmpty() ||
+                !checkEmail(inputEmail.text.toString())){
                 showToast("Wrong!")
             } else {
                 val user = createUser()
