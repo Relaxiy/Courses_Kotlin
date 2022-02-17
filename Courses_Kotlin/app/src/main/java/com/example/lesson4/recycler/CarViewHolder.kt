@@ -48,7 +48,6 @@ class CarViewHolder(
     private fun itemClickListener(item: Cars){
         rootView.setOnClickListener {
             textViewOnClick.textViewClick(item)
-
         }
     }
 }
